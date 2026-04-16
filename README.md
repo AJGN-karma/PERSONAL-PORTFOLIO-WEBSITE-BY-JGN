@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my expertise as a Final-Year A
 
 ## 🌟 Live Demo
 
-[View Live Portfolio](https://your-portfolio-url.com) *(Replace with your actual deployment URL)*
+View Live Portfolio https://ajgn-karma.github.io/PERSONAL-PORTFOLIO-WEBSITE-BY-JGN/
 
 ## 📋 Table of Contents
 
