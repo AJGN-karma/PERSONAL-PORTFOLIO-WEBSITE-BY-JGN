@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
  <head><script src="/_sdk/telemetry_sdk.js"></script>
+  <script src="/_sdk/telemetry_sdk.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JEEVAN GOWDA NAVULE - AI &amp; Data Science Engineer | Freelancer</title>
@@ -209,7 +210,7 @@
 
     .nav-links a:hover::after { width: 100%; }
 
-     .hamburger {
+    .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
@@ -1035,22 +1036,56 @@
 
     @media (max-width: 768px) {
       .nav-links {
-        display: none;
+        display: none !important;
         position: absolute;
-        top: 100%; left: 0;
+        top: 100%;
+        left: 0;
         width: 100%;
         background: rgba(10, 10, 10, 0.95);
         flex-direction: column;
         padding: 2rem;
         gap: 1rem;
+        z-index: 999;
+        border-bottom: 1px solid var(--border-color);
       }
 
-      .nav-links.active { display: flex; }
-      .hamburger { display: flex; }
+      .nav-links.active {
+        display: flex !important;
+      }
 
-      .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-      .hamburger.active span:nth-child(2) { opacity: 0; }
-      .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+      .nav-links li {
+        list-style: none;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1rem;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+
+      .freelancer-nav-badge {
+        display: none;
+      }
 
       .about-content { grid-template-columns: 1fr; text-align: center; }
       .skills-grid, .projects-grid, .certifications-grid, .experience-grid, .education-grid { grid-template-columns: 1fr; }
@@ -1096,7 +1131,7 @@
      <li><a href="#certifications">Certs</a></li>
      <li><a href="#contact">Contact</a></li>
     </ul><span class="freelancer-nav-badge">🔥 Hire Me</span>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span>
+    <div class="hamburger" id="hamburger"><span></span> <span></span> <span></span>
     </div>
    </div>
   </nav>
@@ -1107,9 +1142,11 @@
     </div>
     <h1 id="heroTitle">JEEVAN GOWDA NAVULE</h1>
     <p class="subtitle" id="heroSubtitle">B.E AI &amp; Data Science Engineer | Proven Team Lead &amp; Innovator</p>
-    <div class="freelancer-banner"><span class="emoji">⚡</span> Available for Freelance <span class="emoji">💼</span>
+    <div class="freelancer-banner">
+     <span class="emoji">⚡</span> Available for Freelance <span class="emoji">💼</span>
     </div>
-    <div class="availability"><span class="availability-dot"></span> Currently accepting new projects
+    <div class="availability">
+     <span class="availability-dot"></span> Currently accepting new projects
     </div>
     <p class="description">Dedicated team lead with a proven record of delivering end-to-end technical projects. I transform ideas into functional prototypes with enthusiasm, discipline, and a "can-do" mindset. Whether building AI/ML models, blockchain dApps, IoT solutions, or full-stack applications — I approach challenges with curiosity, resourcefulness, and drive to exceed expectations. 🎯</p>
     <div class="cta-buttons"><a href="#freelance" class="btn btn-freelance"><span>💼</span> Hire Me</a> <a href="#projects" class="btn btn-primary"><span>🔥</span> View My Work</a> <a href="#contact" class="btn btn-secondary"><span>📧</span> Get In Touch</a> <a href="#" class="btn btn-resume" id="downloadResume"><span>📄</span> Download Resume</a>
@@ -1673,14 +1710,11 @@
     <p style="margin-bottom: 3rem; font-size: 1.1rem; color: var(--text-secondary);">Ready to collaborate on innovative projects or need a freelancer? 🚀<br>
      Let's connect and build something amazing together! 💼</p>
     <form class="contact-form" id="contactForm">
-     <div class="form-group">
-      <label for="name">Name</label><input type="text" id="name" name="name" placeholder="Your name" required>
+     <div class="form-group"><label for="name">Name</label> <input type="text" id="name" name="name" placeholder="Your name" required>
      </div>
-     <div class="form-group">
-      <label for="email">Email</label><input type="email" id="email" name="email" placeholder="your@email.com" required>
+     <div class="form-group"><label for="email">Email</label> <input type="email" id="email" name="email" placeholder="your@email.com" required>
      </div>
-     <div class="form-group">
-      <label for="message">Message</label><textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+     <div class="form-group"><label for="message">Message</label> <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
      </div><button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;"><span>🚀</span> Send Message</button>
     </form>
     <div class="social-links"><a href="https://github.com/AJGN-karma" class="social-link" title="GitHub" target="_blank" rel="noopener noreferrer">
@@ -1706,7 +1740,6 @@
    <p>© 2025 JEEVAN GOWDA NAVULE. Built with passion and innovation. 🚀 | 💼 Open for Freelance</p>
   </footer>
   <script>
-    // Element SDK Init
     const defaultConfig = {
       hero_title: 'JEEVAN GOWDA NAVULE',
       hero_subtitle: 'B.E AI & Data Science Engineer | Proven Team Lead & Innovator',
@@ -1746,7 +1779,6 @@
       ])
     });
 
-    // Scroll Progress
     window.addEventListener('scroll', () => {
       const scrollTop = document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1755,21 +1787,32 @@
       }
     });
 
-    // Mobile Nav
+    // Mobile Nav - FIXED
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-    navLinks.addEventListener('click', (e) => {
-      if (e.target.tagName === 'A') {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-      }
-    });
+    
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+      
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+      
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        }
+      });
+    }
 
-    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1778,10 +1821,6 @@
       });
     });
 
-    // Section reveal - sections are visible by default, no hidden state
-    // Removed the opacity:0 and transform that was causing blank sections
-
-    // Particles
     (function() {
       const container = document.getElementById('particles');
       for (let i = 0; i < 30; i++) {
@@ -1799,7 +1838,6 @@
       }
     })();
 
-    // Toast
     function showToast(msg) {
       const toast = document.getElementById('toast');
       toast.textContent = msg;
@@ -1807,7 +1845,6 @@
       setTimeout(() => toast.classList.remove('show'), 3000);
     }
 
-    // Contact Form
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const name = document.getElementById('name').value;
@@ -1820,7 +1857,6 @@
       this.reset();
     });
 
-    // Resume Download
     document.getElementById('downloadResume').addEventListener('click', function(e) {
       e.preventDefault();
       const resumeContent = `JEEVAN GOWDA NAVULE\nB.E AI & Data Science Engineer | Freelancer\nEmail: ajgn232232@gmail.com\nLinkedIn: linkedin.com/in/jeevan-gowda-navule-022524312\nGitHub: github.com/AJGN-karma\n\nPROFESSIONAL SUMMARY\nDedicated team lead and freelancer with proven record of delivering end-to-end technical projects.\n\nEDUCATION\nB.E in AI & Data Science - SDM Institute of Technology, Ujire (2022-2026)\nPre-University College - Govt PU College Uppinangady (2020-2022)\nSSLC - Sacred Heart High School, Madanthyar (2019-2020)\n\nSKILLS\nAI/ML: Python, TensorFlow, PyTorch, Pandas, NumPy, Scikit-learn\nBlockchain: Solidity, Ethereum, Web3.js, MetaMask\nWeb: React, Node.js, Firebase, MySQL, MongoDB\nIoT: Arduino, ESP8266, MQTT, Raspberry Pi\nTools: Git, Figma, Power BI, Tableau`;
@@ -1838,5 +1874,6 @@
 
     lucide.createIcons();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a09ebc5198812e89',t:'MTc4MTE2MTE5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a09ebc5198812e89',t:'MTc4MTE2MTE5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a09efa8f3fff3b01',t:'MTc4MTE2Mzc0Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
